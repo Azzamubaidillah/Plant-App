@@ -18,6 +18,11 @@ class Body extends StatelessWidget {
           child: Stack(
             children: <Widget>[
               Container(
+                padding: EdgeInsets.only(
+                  left: kDefaultPadding,
+                  right: kDefaultPadding,
+                  bottom: 30 + kDefaultPadding,
+                ),
                 height: size.height * 0.2 - 27,
                 decoration: const BoxDecoration(
                   color: kPrimaryColor,
@@ -25,6 +30,17 @@ class Body extends StatelessWidget {
                     bottomLeft: Radius.circular(36),
                     bottomRight: Radius.circular(36),
                   ),
+                ),
+                child: Row(
+                  children: <Widget>[
+                    Text(
+                      "Welcome!",
+                      style: Theme.of(context).textTheme.headline5!.copyWith(
+                          color: Colors.white, fontWeight: FontWeight.bold),
+                    ),
+                    Spacer(),
+                    Image.asset("assets/images/logo.png")
+                  ],
                 ),
               ),
               Positioned(
