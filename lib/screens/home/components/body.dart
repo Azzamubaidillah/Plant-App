@@ -43,6 +43,34 @@ class Body extends StatelessWidget {
                       ),
                     ],
                   ),
+                  child: Row(
+                    children: [
+                      RichText(
+                        text: TextSpan(
+                          children: [
+                            TextSpan(
+                              text: "Samantha\n".toUpperCase(),
+                              style: Theme.of(context).textTheme.button,
+                            ),
+                            TextSpan(
+                              text: "Russia".toUpperCase(),
+                              style: TextStyle(
+                                color: kPrimaryColor.withOpacity(0.5),
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                      Spacer(),
+                      Text(
+                        '\$440',
+                        style: Theme.of(context)
+                            .textTheme
+                            .button!
+                            .copyWith(color: kPrimaryColor),
+                      )
+                    ],
+                  ),
                 ),
               ],
             ),
