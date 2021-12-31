@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:plant_application/constants.dart';
+import 'package:plant_application/screens/details/details_screen.dart';
 
 class RecomendsPlants extends StatelessWidget {
   const RecomendsPlants({
@@ -17,28 +18,52 @@ class RecomendsPlants extends StatelessWidget {
             title: "Maldives",
             country: "Maldives",
             price: 440,
-            press: () {},
+            press: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const DetailsScreen(),
+                  ));
+            },
           ),
           RecommendPlantRecommendation(
             image: "assets/images/ubud-bali.jpg",
             title: "Ubud",
             country: "Bali",
             price: 390,
-            press: () {},
+            press: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const DetailsScreen(),
+                  ));
+            },
           ),
           RecommendPlantRecommendation(
             image: "assets/images/okinawa.jpg",
             title: "Okinawa",
             country: "Japan",
             price: 370,
-            press: () {},
+            press: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const DetailsScreen(),
+                  ));
+            },
           ),
           RecommendPlantRecommendation(
             image: "assets/images/jeju.jpg",
             title: "Jeju Island",
             country: "South Korea",
             price: 395,
-            press: () {},
+            press: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const DetailsScreen(),
+                  ));
+            },
           ),
         ],
       ),
