@@ -13,24 +13,31 @@ class RecomendsPlants extends StatelessWidget {
       child: Row(
         children: [
           RecommendPlantRecommendation(
-            image: "assets/images/image_1.png",
-            title: "Samantha",
-            country: "Russia",
+            image: "assets/images/maldives.jpg",
+            title: "Maldives",
+            country: "Maldives",
             price: 440,
             press: () {},
           ),
           RecommendPlantRecommendation(
-            image: "assets/images/image_2.png",
-            title: "Samantha",
-            country: "Russia",
-            price: 440,
+            image: "assets/images/ubud-bali.jpg",
+            title: "Ubud",
+            country: "Bali",
+            price: 390,
             press: () {},
           ),
           RecommendPlantRecommendation(
-            image: "assets/images/image_3.png",
-            title: "Samantha",
-            country: "Russia",
-            price: 440,
+            image: "assets/images/okinawa.jpg",
+            title: "Okinawa",
+            country: "Japan",
+            price: 370,
+            press: () {},
+          ),
+          RecommendPlantRecommendation(
+            image: "assets/images/jeju.jpg",
+            title: "Jeju Island",
+            country: "South Korea",
+            price: 395,
             press: () {},
           ),
         ],
@@ -58,7 +65,7 @@ class RecommendPlantRecommendation extends StatelessWidget {
     final Size size = MediaQuery.of(context).size;
 
     return Container(
-      margin: EdgeInsets.only(
+      margin: const EdgeInsets.only(
         left: kDefaultPadding,
         top: kDefaultPadding / 2,
         bottom: kDefaultPadding * 2.5,
@@ -67,13 +74,18 @@ class RecommendPlantRecommendation extends StatelessWidget {
       width: size.width * 0.4,
       child: Column(
         children: <Widget>[
-          Image.asset(image),
+          Image.asset(
+            image,
+            height: 185,
+            width: size.width * 0.4,
+            fit: BoxFit.cover,
+          ),
           GestureDetector(
             onTap: press,
             child: Container(
-              padding: EdgeInsets.all(kDefaultPadding / 2),
+              padding: const EdgeInsets.all(kDefaultPadding / 2),
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.only(
+                borderRadius: const BorderRadius.only(
                   bottomLeft: Radius.circular(10),
                   bottomRight: Radius.circular(10),
                 ),
@@ -104,7 +116,7 @@ class RecommendPlantRecommendation extends StatelessWidget {
                       ],
                     ),
                   ),
-                  Spacer(),
+                  const Spacer(),
                   Text(
                     '\$$price',
                     style: Theme.of(context)

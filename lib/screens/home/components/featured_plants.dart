@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:plant_application/constants.dart';
 
 class FeaturedPlants extends StatelessWidget {
   const FeaturedPlants({
@@ -12,11 +13,11 @@ class FeaturedPlants extends StatelessWidget {
       child: Row(
         children: [
           FeaturedPlantCard(
-            image: "assets/images/bottom_img_1.png",
+            image: "assets/images/hawaii.jpg",
             press: () {},
           ),
           FeaturedPlantCard(
-            image: "assets/images/bottom_img_2.png",
+            image: "assets/images/miami.jpg",
             press: () {},
           ),
         ],
@@ -41,7 +42,7 @@ class FeaturedPlantCard extends StatelessWidget {
     return GestureDetector(
       onTap: press,
       child: Container(
-        margin: EdgeInsets.only(
+        margin: const EdgeInsets.only(
           left: kDefaultPadding,
           top: kDefaultPadding / 2,
           bottom: kDefaultPadding / 2,

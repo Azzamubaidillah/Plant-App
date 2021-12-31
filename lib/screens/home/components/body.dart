@@ -23,7 +23,7 @@ class Body extends StatelessWidget {
           ),
           RecomendsPlants(),
           TitleWithMoreButton(
-            title: "Featured Plants",
+            title: "Featured Destinations",
             press: () {},
           ),
           FeaturedPlants(),
