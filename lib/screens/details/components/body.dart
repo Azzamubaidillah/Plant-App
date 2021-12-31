@@ -34,6 +34,7 @@ class Body extends StatelessWidget {
                         ),
                       ),
                       const Spacer(),
+                      const IconCard(),
                     ],
                   ),
                 ),
@@ -63,6 +64,41 @@ class Body extends StatelessWidget {
           ),
         ),
       ],
+    );
+  }
+}
+
+class IconCard extends StatelessWidget {
+  const IconCard({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+
+    return Container(
+      margin: EdgeInsets.symmetric(vertical: size.height * 0.03),
+      padding: const EdgeInsets.all(kDefaultPadding / 1.8),
+      height: 62,
+      width: 62,
+      decoration: BoxDecoration(
+        color: kBackgroundColor,
+        borderRadius: BorderRadius.circular(6),
+        boxShadow: [
+          BoxShadow(
+            offset: const Offset(0, 15),
+            blurRadius: 22,
+            color: kPrimaryColor.withOpacity(0.29),
+          ),
+          const BoxShadow(
+            offset: Offset(-15, -15),
+            blurRadius: 20,
+            color: Colors.white,
+          ),
+        ],
+      ),
+      child: SvgPicture.asset("assets/icons/sun.svg"),
     );
   }
 }
