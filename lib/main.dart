@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:plant_application/constants.dart';
-import 'package:plant_application/screens/home/home_screen.dart';
+
+import 'screens/welcome/welcome_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,14 +15,14 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Plant Application',
+      title: 'Travel Application',
       theme: ThemeData(
         scaffoldBackgroundColor: kBackgroundColor,
         primaryColor: kPrimaryColor,
         textTheme: Theme.of(context).textTheme.apply(bodyColor: kTextColor),
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: HomeScreen(),
+      home: WelcomeScreen(),
     );
   }
 }
