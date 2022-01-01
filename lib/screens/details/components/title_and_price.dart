@@ -16,9 +16,7 @@ class TitleAndPrice extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(
-          left: kDefaultPadding,
-          right: kDefaultPadding,
-          top: kDefaultPadding * 2),
+          left: kDefaultPadding, right: kDefaultPadding, top: kDefaultPadding),
       child: Row(
         children: <Widget>[
           RichText(
