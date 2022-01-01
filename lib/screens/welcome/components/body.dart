@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:plant_application/constants.dart';
+
+import 'background.dart';
 
 class Body extends StatelessWidget {
   const Body({Key? key}) : super(key: key);
@@ -8,48 +12,73 @@ class Body extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return Background(
       child: Column(
-        children: <Widget>[],
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          const Text(
+            "Welcome to Traveel",
+            style: TextStyle(fontWeight: FontWeight.bold),
+          ),
+          SizedBox(
+            height: size.height * 0.45,
+            child: Image.asset(
+              "assets/images/chat.png",
+            ),
+          ),
+          RoundedButton(
+            text: "LOGIN",
+            press: () {},
+            color: kPrimaryColor,
+            textColor: Colors.white,
+          ),
+          RoundedButton(
+            text: "SIGNUP",
+            press: () {},
+            color: kPrimaryLightColor,
+            textColor: kPrimaryColor,
+          ),
+        ],
       ),
     );
   }
 }
 
-class Background extends StatelessWidget {
-  const Background({
+class RoundedButton extends StatelessWidget {
+  const RoundedButton({
     Key? key,
-    required this.child,
+    required this.text,
+    required this.press,
+    required this.color,
+    required this.textColor,
   }) : super(key: key);
 
-  final Widget child;
+  final String text;
+  final VoidCallback press;
+  final Color color, textColor;
 
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
 
-    return SizedBox(
-      height: size.height,
-      width: double.infinity,
-      child: Stack(
-        alignment: Alignment.center,
-        children: <Widget>[
-          Positioned(
-            top: 0,
-            left: 0,
-            child: Image.asset(
-              "assets/images/main_top.png",
-              width: size.width * 0.3,
+    return Container(
+      margin: const EdgeInsets.symmetric(vertical: 10),
+      width: size.width * 0.8,
+      child: TextButton(
+        style: TextButton.styleFrom(
+          backgroundColor: color,
+          shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(
+              Radius.circular(20),
             ),
           ),
-          Positioned(
-            bottom: 0,
-            left: 0,
-            child: Image.asset(
-              "assets/images/main_bottom.png",
-              width: size.width * 0.2,
-            ),
+        ),
+        child: Padding(
+          padding: EdgeInsets.symmetric(vertical: 8, horizontal: 40),
+          child: Text(
+            text,
+            style: TextStyle(color: textColor),
           ),
-          child,
-        ],
+        ),
+        onPressed: press,
       ),
     );
   }
