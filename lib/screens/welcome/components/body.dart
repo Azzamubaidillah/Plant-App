@@ -16,7 +16,10 @@ class Body extends StatelessWidget {
         children: <Widget>[
           const Text(
             "Welcome to Traveel",
-            style: TextStyle(fontWeight: FontWeight.bold),
+            style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+          ),
+          SizedBox(
+            height: size.height * 0.05,
           ),
           SizedBox(
             height: size.height * 0.45,
@@ -60,7 +63,7 @@ class RoundedButton extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
 
     return Container(
-      margin: const EdgeInsets.symmetric(vertical: 10),
+      margin: const EdgeInsets.only(top: 20),
       width: size.width * 0.8,
       child: TextButton(
         style: TextButton.styleFrom(
@@ -72,7 +75,7 @@ class RoundedButton extends StatelessWidget {
           ),
         ),
         child: Padding(
-          padding: EdgeInsets.symmetric(vertical: 8, horizontal: 40),
+          padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 40),
           child: Text(
             text,
             style: TextStyle(color: textColor),
