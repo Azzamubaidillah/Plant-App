@@ -11,35 +11,37 @@ class Body extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Background(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          const Text(
-            "Welcome to Traveel",
-            style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
-          ),
-          SizedBox(
-            height: size.height * 0.05,
-          ),
-          SizedBox(
-            height: size.height * 0.45,
-            child: Image.asset(
-              "assets/images/chat.png",
+      child: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            const Text(
+              "Welcome to Traveel",
+              style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
             ),
-          ),
-          RoundedButton(
-            text: "LOGIN",
-            press: () {},
-            color: kPrimaryColor,
-            textColor: Colors.white,
-          ),
-          RoundedButton(
-            text: "SIGNUP",
-            press: () {},
-            color: kPrimaryLightColor,
-            textColor: kPrimaryColor,
-          ),
-        ],
+            SizedBox(
+              height: size.height * 0.05,
+            ),
+            SizedBox(
+              height: size.height * 0.45,
+              child: Image.asset(
+                "assets/images/chat.png",
+              ),
+            ),
+            RoundedButton(
+              text: "LOGIN",
+              press: () {},
+              color: kPrimaryColor,
+              textColor: Colors.white,
+            ),
+            RoundedButton(
+              text: "SIGNUP",
+              press: () {},
+              color: kPrimaryLightColor,
+              textColor: kPrimaryColor,
+            ),
+          ],
+        ),
       ),
     );
   }
